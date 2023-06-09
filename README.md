@@ -25,4 +25,5 @@
 ## 在线安装
 
 [greasyfork](https://greasyfork.org/scripts/468308)
-[本地安装]()
+
+[github安装](https://raw.githubusercontent.com/Mr-xn/CNVD_Modify/main/CNVD_Modify.js)
