@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CNVD_Modify
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  CNVD添加复制漏洞列表页面单个或所有漏洞标题、优化用户中心已提交漏洞展示和复制漏洞编号
 // @author       Mrxn
 // @homepage     https://mrxn.net/
@@ -54,7 +54,7 @@
                 const a = td.querySelector('a');
                 if (a) {
                     // 将a标签的title属性值添加到数组中
-                    titles.push(a.getAttribute('title'));
+                    titles.push(a.getAttribute('title') || a.outerText);
                 }
             });
             // 将title属性值以换行符为分隔符合并为一个字符串
@@ -114,7 +114,7 @@
                         // 创建一个临时的textarea元素
                         const textarea = document.createElement('textarea');
                         // 将a标签的title属性赋值给textarea元素的value属性
-                        textarea.value = a.getAttribute('title');
+                        textarea.value = a.getAttribute('title') || a.outerText;
                         // 将textarea元素添加到页面中
                         document.body.appendChild(textarea);
                         // 选中textarea元素中的文本
