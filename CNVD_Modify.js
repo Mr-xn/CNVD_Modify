@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CNVD_Modify
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @description  CNVD添加复制漏洞列表页面单个或所有漏洞标题、优化用户中心已提交漏洞展示和复制漏洞编号
 // @author       Mrxn
 // @homepage     https://mrxn.net/
@@ -154,7 +154,7 @@
         if (window.location.href.startsWith('https://www.cnvd.org.cn/')){
             user_copy();
         }
-        if (window.location.href.includes('/flaw/list')) {
+        if (window.location.href.includes('/flaw/list') || window.location.href.includes('/flaw/flawListByManu')) {
             //添加复制所有漏洞标题按钮
             copy_all_vuln_title();
         }
